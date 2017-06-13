@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent} from './components/navbar/navbar.component'
+import {JumbotronComponent} from './components/jumborton/jumborton.component'
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent
+    AppComponent, NavbarComponent, JumbotronComponent
   ],
   imports: [
     BrowserModule
