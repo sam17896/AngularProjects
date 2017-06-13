@@ -7,10 +7,11 @@ import {GithubService} from './service/github.service';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './component/profile.component'; 
+import { NavbarComponent } from './component/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProfileComponent
+    AppComponent, ProfileComponent, NavbarComponent
   ],
   imports: [
     BrowserModule, HttpModule
