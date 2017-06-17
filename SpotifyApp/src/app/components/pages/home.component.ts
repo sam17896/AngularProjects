@@ -14,6 +14,9 @@ export class HomeComponent {
   }
 
   searchMusic(){
-      console.log(this.searchStr);
+    this.spotify.searchMusic(this.searchStr)
+      .subscribe (res =>{
+        console.log(res.artists.items);
+      })
   }
 }
