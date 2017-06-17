@@ -5,6 +5,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './components/pages/home.component';
 import {AboutComponent} from './components/pages/about.component';
 import {ArtistComponent} from './components/pages/artist.component';
+import {AlbumComponent} from './components/pages/album.component';
 
 const appRoutes : Routes = [
     {
@@ -18,6 +19,10 @@ const appRoutes : Routes = [
     {
         path : 'artist/:id',
         component : ArtistComponent
+    },
+    {
+        path : 'album/:id',
+        component : AlbumComponent
     }
 
 

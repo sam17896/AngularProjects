@@ -9,13 +9,14 @@ import { NavbarComponent } from './components/navbar.component';
 import { AboutComponent } from './components/pages/about.component';
 import { HomeComponent } from './components/pages/home.component';
 import { ArtistComponent } from './components/pages/artist.component';
+import { AlbumComponent } from './components/pages/album.component';
 
 import {routing} from './app.routers';
 
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent,HomeComponent, AboutComponent,
-    ArtistComponent
+    ArtistComponent, AlbumComponent
   ],
   imports: [
     BrowserModule, routing, FormsModule, HttpModule
