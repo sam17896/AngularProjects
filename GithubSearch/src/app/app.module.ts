@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule} from '@angular/http'
+import { HttpModule} from '@angular/http';
+import { FormsModule }   from '@angular/forms';
 import {GithubService} from './service/github.service';
 
 
@@ -14,7 +15,7 @@ import { NavbarComponent } from './component/navbar.component';
     AppComponent, ProfileComponent, NavbarComponent
   ],
   imports: [
-    BrowserModule, HttpModule
+    BrowserModule, HttpModule, FormsModule
   ],
   providers: [GithubService],
   bootstrap: [AppComponent]
