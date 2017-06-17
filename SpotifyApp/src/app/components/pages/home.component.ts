@@ -8,15 +8,31 @@ import { SpotifyService } from '../../service/spotify.service';
 })
 export class HomeComponent {
   private searchStr: string;
+  private result:Artist[];
 
   constructor(private spotify: SpotifyService){
 
   }
 
   searchMusic(){
-    this.spotify.searchMusic(this.searchStr)
+    if(this.searchStr.length>0){
+      this.spotify.searchMusic(this.searchStr)
       .subscribe (res =>{
-        console.log(res.artists.items);
+        this.result = res.artists.items;
       })
+    }
+    
   }
+}
+
+
+interface Artist{
+  id: number;
+  name: string;
+  genres: any;
+  albums: Album[];
+}
+
+interface Album{
+  id: number;
 }
