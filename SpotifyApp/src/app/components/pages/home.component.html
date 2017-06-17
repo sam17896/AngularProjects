@@ -1,1 +1,8 @@
-Home
+<h1>Want Music?</h1>
+<p class="lead">This site will let to browse through the wide range of music library! Feel free to search!</p>
+
+<form>
+    <div class="form-group">
+        <input class="form-control" type="text" name="searchStr" [(ngModel)]="searchStr" placeholder="Search Music....." (keyup)="searchMusic()">
+    </div>
+</form>
