@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar.component';
 import { AboutComponent } from './components/pages/about.component';
 import { HomeComponent } from './components/pages/home.component';
+import { ArtistComponent } from './components/pages/artist.component';
 
 import {routing} from './app.routers';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent,HomeComponent, AboutComponent
+    AppComponent, NavbarComponent,HomeComponent, AboutComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule, routing, FormsModule, HttpModule
