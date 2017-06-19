@@ -19,9 +19,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "src/styles.css"
+        "styles.css",
+        "../bower_components/bootstrap/dist/css/bootstrap.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../bower_components/jquery/dist/jquery.js",
+        "../bower_components/bootstrap/dist/js/bootstrap.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
