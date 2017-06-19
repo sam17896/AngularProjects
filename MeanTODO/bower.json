@@ -1,0 +1,21 @@
+{
+  "name": "meantodo",
+  "description": "todo backend server",
+  "main": "server.js",
+  "authors": [
+    "Ahsan Sohail"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
