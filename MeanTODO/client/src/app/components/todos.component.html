@@ -11,16 +11,17 @@
     <div class="alert alert-info text-center" [hidden]="todos.length > 0">
         <h3>No Todos</h3>
     </div>
-    <div class="col-md-1">
-        <input type="checkbox">
+    <div *ngFor="let todo of todos"> 
+        <div class="col-md-1">
+            <input type="checkbox">
+        </div>
+        <div class="col-md-7">
+            {{todo.text}}
+        </div>
+        <div class="col-md-4 btns">
+            <input type="button" class="btn btn-danger pull-right" value="Delete">
+        <input type="button" class="btn btn-default pull-right" value="Edit">
+        </div>
     </div>
-    <div class="col-md-7">
-        Some Todo
-    </div>
-    <div class="col-md-4 btns">
-        <input type="button" class="btn btn-danger pull-right" value="Delete">
-    <input type="button" class="btn btn-default pull-right" value="Edit">
-    </div>
-    
 
 </div> 
