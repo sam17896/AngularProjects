@@ -3,7 +3,7 @@
     <div class="form-group">
         <input class="form-control input-lg" placeholder="Add Todo..." autofocus #todoText>
         <br>
-        <button class="btn btn-primary btn-block">Create</button>
+        <button (click)="addTodo($event, todoText)" class="btn btn-primary btn-block">Create</button>
     </div>
 </div>
 

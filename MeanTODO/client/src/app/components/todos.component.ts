@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'todos.component.html',
 })
 export class TodosComponent implements OnInit {
-    todos: Todo[];
+    private todos: Todo[];
     constructor(private todoService: TodoService){
 
     }
@@ -20,6 +20,24 @@ export class TodosComponent implements OnInit {
         .map(res => res.json())
         .subscribe(todos => this.todos = todos)
 
+    }
+
+    addTodo($event, todoText){
+        console.log(todoText.value);
+        if($event.which == 1){
+            var result;
+            var newTodo = {
+                text : todoText.value,
+                isCompleted : false
+            }
+        }
+
+        result = this.todoService.saveTodo(newTodo);
+
+        result.subscribe(x => {
+            this.todos.push(newTodo);
+            todoText.value = "";
+        })
     }
   
 }
