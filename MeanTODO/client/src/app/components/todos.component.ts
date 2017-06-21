@@ -28,7 +28,8 @@ export class TodosComponent implements OnInit {
             var result;
             var newTodo = {
                 text : todoText.value,
-                isCompleted : false
+                isCompleted : false,
+                isEditMode : false
             }
         }
 
@@ -39,10 +40,56 @@ export class TodosComponent implements OnInit {
             todoText.value = "";
         })
     }
+
+
+    updateTodo(todo){
+        console.log("Update");
+        var newTodo = {
+            _id : todo._id,
+            text : todo.text,
+            isCompleted : !todo.isCompleted,
+            isEditMode : todo.isEditMode
+        };
+
+        this.todoService.updateTodo(newTodo)
+            .map(res => res.json())
+            .subscribe(data => {
+                todo.isCompleted = !todo.isCompleted;
+            });
+    }
+
+
+    setEditState(todo, state){
+        if(state){
+            todo.isEditMode = state;
+        } else {
+            delete todo.isEditMode;
+        }
+    }
+
+    EditTodo($event,todo){
+        if($event.which == 13){
+            todo.text = $event.target.value;
+            var newTodo = {
+                _id : todo._id,
+                text : todo.text,
+                isCompleted : todo.isCompleted,
+                isEditMode : false
+            };
+
+            this.todoService.updateTodo(newTodo)
+                .map(res => res.json())
+                .subscribe(data => {
+                    this.setEditState(todo, false);
+                });
+        }
+    }
+
   
 }
 
 interface Todo{
     text : string,
-    isCompleted : boolean
+    isCompleted : boolean,
+    isEditMode : boolean
 }

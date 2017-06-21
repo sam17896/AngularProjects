@@ -13,14 +13,17 @@
     </div>
     <div *ngFor="let todo of todos"> 
         <div class="col-md-1">
-            <input type="checkbox">
+            <input type="checkbox" [checked]="todo.isCompleted" (click)="updateTodo(todo)">
         </div>
         <div class="col-md-7">
-            {{todo.text}}
+            <span [class.hidden]="todo.isEditMode">{{todo.text}}</span>
+            <input [class.hidden]="!todo.isEditMode" type="text" [value]="todo.text" (keypress)="EditTodo($event,todo)"/>
+            <input [class.hidden]="!todo.isEditMode" type="button" value="Cancel" (click)="setEditState(todo,false)" class="btn btn-warning"/>
+            
         </div>
         <div class="col-md-4 btns">
             <input type="button" class="btn btn-danger pull-right" value="Delete">
-        <input type="button" class="btn btn-default pull-right" value="Edit">
+            <input type="button" [class.disabled]="todo.isCompleted" (click)="setEditState(todo,true)" class="btn btn-default pull-right" value="Edit">
         </div>
     </div>
 
