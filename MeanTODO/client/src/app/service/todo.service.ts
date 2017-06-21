@@ -30,4 +30,8 @@ export class TodoService{
         return this.http.put(this.url + 'api/v1/todo/' + todo._id, JSON.stringify(todo),{headers: headers});
     }
 
+    deleteTodo(id){
+        return this.http.delete(this.url + 'api/v1/todo/'+ id);
+    }
+
 }

@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'todos.component.html',
 })
 export class TodosComponent implements OnInit {
-    private todos: Todo[];
+    private todos: any[];
     constructor(private todoService: TodoService){
 
     }
@@ -83,6 +83,20 @@ export class TodosComponent implements OnInit {
                     this.setEditState(todo, false);
                 });
         }
+    }
+
+    deleteTodo(todo){
+        var todos = this.todos;
+
+        this.todoService.deleteTodo(todo._id)
+            .map(res => res.json)
+            .subscribe(data => {
+                for(var i=0;i<todos.length;i++){
+                    if(todos[i]._id==todo._id){
+                        todos.splice(i, 1);
+                    }
+                }
+            });
     }
 
   
