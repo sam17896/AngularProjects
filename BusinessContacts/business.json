@@ -1,0 +1,53 @@
+{
+"businesses": [
+    {
+        "category" : "IT",       
+        "city": "Karachi",
+        "company" : "Folio3",
+        "description" : "Company For Computer Science",
+        "email" : "folio3@gmail.com",
+        "phone" : "02131234567",
+        "state" : "Sindh",
+        "street_address" : "Shahr-e-Faisal, Karachi",
+        "year_in_business" : "7",
+        "zipcode": 78604
+    },
+    {
+        "category" : "Retail",       
+        "city": "Karachi",
+        "company" : "NestIO",
+        "description" : "Company For Computer Science",
+        "email" : "NestIO@gmail.com",
+        "phone" : "02131234567",
+        "state" : "Sindh",
+        "street_address" : "Shahr-e-Faisal, Karachi",
+        "year_in_business" : "3",
+        "zipcode": 78604
+    },
+    {
+        "category" : "Retail",       
+        "city": "Karachi",
+        "company" : "Folio3",
+        "description" : "Company For Computer Science",
+        "email" : "folio3@gmail.com",
+        "phone" : "02131234567",
+        "state" : "Sindh",
+        "street_address" : "Shahr-e-Faisal, Karachi",
+        "year_in_business" : "7",
+        "zipcode": 78604
+    },
+    {
+        "category" : "Retail",       
+        "city": "Karachi",
+        "company" : "Folio3",
+        "description" : "Company For Computer Science",
+        "email" : "folio3@gmail.com",
+        "phone" : "02131234567",
+        "state" : "Sindh",
+        "street_address" : "Shahr-e-Faisal, Karachi",
+        "year_in_business" : "7",
+        "zipcode": 78604
+    }
+
+  ]
+}
