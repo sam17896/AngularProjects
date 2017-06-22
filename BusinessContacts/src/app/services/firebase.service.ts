@@ -11,10 +11,18 @@ export class FirebaseService{
 
     }
 
-    getBusinesses(){
-        this.businesses = this.db.list('/businesses') as FirebaseListObservable<Business[]>;
+    getBusinesses(category:string = "0"){
+        if(category != "0"){
+            this.businesses = this.db.list('/businesses', {
+                query : {
+                    orderByChild : 'category',
+                    equalTo : category
+                }
+            }) as FirebaseListObservable<Business[]>;
+        } else {
+            this.businesses = this.db.list('/businesses') as FirebaseListObservable<Business[]>;
+        }
         return this.businesses;
-
     }
 
      getCategories(){

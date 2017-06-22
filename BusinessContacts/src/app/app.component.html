@@ -12,6 +12,22 @@
 </div>
 <br>
 
+<div *ngIf="appState == 'default'" class="row">
+  <div class="large-6 columns">
+    <button class="button" (click)="changeState('add')">Add Business</button>
+  </div>
+  <div class="large-6 columns">
+    <label>Filter Category
+      <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
+        <option value="0">Select</option>
+        <option *ngFor="let category of categories" value="{{category.name}}">
+          {{category.name}}
+        </option>
+      </select>
+    </label>  
+  </div> 
+</div>
+
 <div *ngIf="appState == 'extend'">
   <div class="row">
     <div class="large-12 large-1-offset columns">

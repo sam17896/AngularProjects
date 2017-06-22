@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.appState = 'default';
     this.firebase.getBusinesses().subscribe(businesses => {
       this.businesses = businesses;
     });
@@ -35,6 +36,13 @@ export class AppComponent implements OnInit {
     }
 
     this.appState = state;
+  }
+
+  filterCategory(category){
+    this.firebase.getBusinesses(category)
+      .subscribe(businesses => {
+        this.businesses = businesses;
+      });
   }
 }
 
