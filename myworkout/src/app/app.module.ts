@@ -3,12 +3,15 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddPage } from '../pages/add/add';
 import { AboutPage } from '../pages/about/about';
 import { WorkoutPage } from '../pages/workouts/workouts';
+import {WorkoutService} from './services/workout.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { WorkoutPage } from '../pages/workouts/workouts';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -31,6 +36,7 @@ import { WorkoutPage } from '../pages/workouts/workouts';
     WorkoutPage
   ],
   providers: [
+    WorkoutService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
