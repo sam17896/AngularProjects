@@ -38,6 +38,10 @@ export class FirebaseService{
     updateBusiness(key, newBusiness){
         this.businesses.update(key,newBusiness);
     }
+
+    deleteBusiness(key){
+        this.businesses.remove(key); 
+    }
 }
 
 
