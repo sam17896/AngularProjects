@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,7 +16,8 @@ import { FirebaseService} from './services/firebase.service';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, "Business Contacts"),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
