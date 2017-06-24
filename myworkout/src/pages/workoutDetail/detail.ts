@@ -9,7 +9,6 @@ export class DetailPage {
   workout : any;
   constructor(public navCtrl: NavController, private params: NavParams) {
     this.workout = params.get('workout');
-    console.log(this.workout);
-  }
+    }
 
 }

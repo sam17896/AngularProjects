@@ -3,5 +3,16 @@
 </ion-navbar>
 
 <ion-content padding>
-    Detail
+    <ion-card>
+        <ion-card-header>
+            <strong>{{workout.title}}</strong>
+        </ion-card-header>
+        <ion-card-content>
+            <p><strong>Type: </strong>{{workout.type}}</p>
+            <hr>
+            {{workout.note}}
+            <br><br><br>
+            <button ion-button danger block>Delete Wrokout</button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
