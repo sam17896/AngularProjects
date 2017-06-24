@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { AddPage } from '../pages/add/add';
 import { AboutPage } from '../pages/about/about';
 import { WorkoutPage } from '../pages/workouts/workouts';
+import { DetailPage } from '../pages/workoutDetail/detail';
 import {WorkoutService} from './services/workout.service';
 
 @NgModule({
@@ -19,7 +20,8 @@ import {WorkoutService} from './services/workout.service';
     HomePage,
     AddPage,
     AboutPage,
-    WorkoutPage
+    WorkoutPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import {WorkoutService} from './services/workout.service';
     HomePage,
     AddPage,
     AboutPage,
-    WorkoutPage
+    WorkoutPage,
+    DetailPage
   ],
   providers: [
     WorkoutService,
