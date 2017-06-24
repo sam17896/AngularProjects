@@ -7,7 +7,7 @@ import {HttpModule} from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingPage } from '../pages/setting/setting';
-import {WeatherService} from '../app/services/weather.service';
+import { WeatherService } from '../app/services/weather.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

@@ -5,13 +5,41 @@
 </ion-header>
 
 <ion-content padding class="weather"> 
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-grid *ngIf="weatherObj">
+    <ion-row>
+      <ion-col width-50 offset-25>
+          <h2 class="location">{{weatherObj.display_location.full}}</h2>
+          <div class="icon"><img src="{{weatherObj.icon_url}}"></div>
+          <h3 class="desc">{{weatherObj.weather}}</h3>
+          <h1 class="temp">{{weatherObj.temp_f}}&deg;</h1>
+      </ion-col>
+    </ion-row>
+      <ion-row>
+      <ion-col width-100>
+          <ion-list>
+            <ion-item>
+              <strong>Temp: </strong>{{weatherObj.temperature_string}}
+            </ion-item>
+            <ion-item>
+              <strong>Relative Humidity: </strong>{{weatherObj.relative_humidity}}
+            </ion-item>
+            <ion-item>
+              <strong>Dewpoint: </strong>{{weatherObj.dewpoint_string}}
+            </ion-item>
+            <ion-item>
+              <strong>Visibility: </strong>{{weatherObj.visibility_mi}}
+            </ion-item>
+            <ion-item>
+              <strong>Wind: </strong>{{weatherObj.wind_mph}} Mph
+            </ion-item>
+            <ion-item>
+              <strong>Wind Direction: </strong>{{weatherObj.wind_dir}}
+            </ion-item>
+            <ion-item>
+              <strong>Heat Index: </strong>{{weatherObj.heat_index_string}}
+            </ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

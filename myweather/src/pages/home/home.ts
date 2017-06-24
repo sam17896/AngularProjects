@@ -11,6 +11,8 @@ export class HomePage implements OnInit {
   city = 'Boston';
   state = 'MA';
 
+  weatherObj : any;
+
   constructor(public navCtrl: NavController, private weather:WeatherService) {
     console.log('service ready');
   }
@@ -18,7 +20,8 @@ export class HomePage implements OnInit {
   ngOnInit(){
     this.weather.getWeather(this.city,this.state)
       .subscribe(data => {
-        console.log(data);
+        this.weatherObj = data.current_observation;
+        console.log(this.weatherObj);
       });
   }
 
