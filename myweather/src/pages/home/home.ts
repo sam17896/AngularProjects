@@ -8,12 +8,10 @@ import {WeatherService} from '../../app/services/weather.service';
 })
 export class HomePage implements OnInit {
 
-  city = 'Boston';
-  state = 'MA';
-
   weatherObj : any;
   searchStr : string;
   results : any;
+  zmw : any;
 
 
   constructor(public navCtrl: NavController, private weather:WeatherService) {
@@ -21,7 +19,8 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit(){
-    this.weather.getWeather(this.city,this.state)
+    this.getDefaultValue();
+    this.weather.getWeather(this.zmw)
       .subscribe(data => {
         this.weatherObj = data.current_observation;
         console.log(this.weatherObj);
@@ -34,6 +33,19 @@ export class HomePage implements OnInit {
         this.results = data.RESULTS;
         console.log(this.results);
       });
+  }
+
+  choseCity(city){
+    this.results = [];
+    this.weather.getWeather(city.zmw)
+      .subscribe(data => {
+        this.weatherObj = data.current_observation;
+        console.log(this.weatherObj);
+      });
+  }
+
+  getDefaultValue(){
+    this.zmw = "02101.1.99999";
   }
 
 

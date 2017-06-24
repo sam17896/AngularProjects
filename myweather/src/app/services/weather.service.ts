@@ -11,12 +11,12 @@ export class WeatherService {
 
     constructor(private http:Http){
         this.apiKey = 'f79e91d259637b65';
-        this.baseUrl = '/api/';    
+        this.baseUrl = '/api/'+this.apiKey+"/conditions";    
         this.searchUrl = '/search/aq?query=';
     }
 
-    getWeather(city, state){
-        return this.http.get(this.baseUrl + '/' +state + '/'+ city +'.json')
+    getWeather(zmw){
+        return this.http.get(this.baseUrl + "/zmw:"+ zmw +".json")
             .map(res => res.json());
     }
 

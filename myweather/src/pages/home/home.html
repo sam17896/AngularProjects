@@ -18,7 +18,7 @@
 
         <ion-list>
           <ion-item *ngFor="let result of results">
-            {{result.name}}
+            <span (click)="choseCity(result)">{{result.name}}</span>
           </ion-item>
         </ion-list>
       </ion-col>
