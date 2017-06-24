@@ -18,4 +18,13 @@ export class WorkoutService {
         return this.http.get(this.baseUrl + "?apiKey=" + this.apiKey)
             .map(res => res.json());
     }
+
+    addWorkout(workout){
+
+        var header = new Headers();
+        header.append('Content-Type', 'application/json');
+        return this.http.post(this.baseUrl+"?apiKey="+this.apiKey, JSON.stringify(workout),{headers:header})
+            .map(res => res.json());
+
+    }
 }

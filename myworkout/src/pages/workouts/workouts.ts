@@ -14,6 +14,9 @@ export class WorkoutPage implements OnInit {
 
   constructor(public navCtrl: NavController, private workout:WorkoutService, private params:NavParams) {
       console.log('Service Ready');
+      this.workout.getWorkout().subscribe(workout => {
+        this.workouts = workout;
+    });
   }
 
   ngOnInit(){

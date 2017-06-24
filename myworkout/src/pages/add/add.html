@@ -3,5 +3,32 @@
 </ion-navbar>
 
 <ion-content padding>
-    <h2>Add</h2>
+    <h2>Add Workout</h2>
+    <form (submit) = "onSubmit()">
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Title:</ion-label>
+                <ion-input [(ngModel)]="title" type="text" name="title" value=""></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Note:</ion-label>
+                <ion-input [(ngModel)]="note" name="note" type="textarea"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Type:</ion-label>
+                <ion-select [(ngModel)]="type" name="type">
+                    <ion-option value="Jogging">Jogging</ion-option>
+                    <ion-option value="Free Weights">Free Weights</ion-option>
+                    <ion-option value="Elliptical">Elliptical</ion-option>
+                    <ion-option value="Boxing">Boxing</ion-option>
+                    <ion-option value="Aerobics">Aerobics</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <button ion-button block type="submit">Add Workout</button>
+            </ion-item>
+        </ion-list>
+    </form>
 </ion-content>
