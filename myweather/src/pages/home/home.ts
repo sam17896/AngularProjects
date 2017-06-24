@@ -12,6 +12,9 @@ export class HomePage implements OnInit {
   state = 'MA';
 
   weatherObj : any;
+  searchStr : string;
+  results : any;
+
 
   constructor(public navCtrl: NavController, private weather:WeatherService) {
     console.log('service ready');
@@ -22,6 +25,14 @@ export class HomePage implements OnInit {
       .subscribe(data => {
         this.weatherObj = data.current_observation;
         console.log(this.weatherObj);
+      });
+  }
+
+  getQuery(){
+    this.weather.searchCities(this.searchStr)
+      .subscribe(data => {
+        this.results = data.RESULTS;
+        console.log(this.results);
       });
   }
 
