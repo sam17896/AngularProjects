@@ -11,7 +11,7 @@ export class WeatherService {
 
     constructor(private http:Http){
         this.apiKey = 'f79e91d259637b65';
-        this.baseUrl = '/api/'+this.apiKey+"/conditions";    
+        this.baseUrl = '/api/'+this.apiKey+"/conditions/q";    
         this.searchUrl = '/search/aq?query=';
     }
 
