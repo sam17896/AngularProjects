@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule, FormBuilder, Validators } from '@angular/forms';
+
+import { MarkerService} from './service/marker.service';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,28 +18,10 @@ export class AppComponent {
   zoom : number = 10;
   markerForm : any;
 
-  markers : marker[] = [
-    {
-      name : 'Company One',
-      lat : 42.825588,
-      lng : -71.018029,
-      draggable : true
-    },
-    {
-      name : 'Company Two',
-      lat : 42.868164,
-      lng : -70.889071,
-      draggable : true
-    },
-    {
-      name : 'Company Three',
-      lat : 42.858279,
-      lng : -70.930498,
-      draggable : false
-    }
-  ]
+  markers : marker[];
 
-  constructor(){
+  constructor(private service : MarkerService){
+    this.markers = this.service.getMarkers();
     let fb = new FormBuilder();
     
     this.markerForm = fb.group({
@@ -95,7 +81,8 @@ export class AppComponent {
       }
 
       this.markers.push(newMarker);
-      console.log('added');
+      this.service.addMarker(newMarker);
+      console.log(this.markers.length);
 
     } else {
       alert('Please fill all the fields');

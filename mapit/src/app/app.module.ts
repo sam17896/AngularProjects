@@ -5,6 +5,7 @@ import { FormsModule, FormBuilder, Validators, ReactiveFormsModule  } from '@ang
 import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { MarkerService} from './service/marker.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyD73-U6GEzviZsmEixFOYfVdsM1jPD6Gdg'
     })
   ],
-  providers: [],
+  providers: [MarkerService],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })
