@@ -41,4 +41,35 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Add New Marker</h3>
+        </div>
+        <div class="panel-body">
+          <form [formGroup] ="markerForm" (submit)="addMarker($event)">
+            <label>Location Name</label>
+            <input type="text" formControlName="name">
+
+            <label>Longitude</label>
+            <input type="text" formControlName="lat">
+            
+            <label>Latitude</label>
+            <input type="text" formControlName="lng">
+            
+            <label>Draggable</label>
+            <select formControlName="draggable">
+              <option value="no">No</option>
+              <option value="yes">Yes</option> 
+            </select>
+            <input type="submit" value="MapIt">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FormsModule, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,6 +12,7 @@ export class AppComponent {
 
   //Zoom Level 
   zoom : number = 10;
+  markerForm : any;
 
   markers : marker[] = [
     {
@@ -35,6 +36,15 @@ export class AppComponent {
   ]
 
   constructor(){
+    let fb = new FormBuilder();
+    
+    this.markerForm = fb.group({
+      name : ['', Validators.required],
+      lat : ['', Validators.required],
+      lng : ['', Validators.required],
+      draggable : [false],
+      
+    });
 
   }
 
@@ -65,6 +75,31 @@ export class AppComponent {
 
     var newLat = $event.coords.lat;
     var newLng = $event.coords.lng;
+  }
+
+  addMarker(){
+    if(this.markerForm.valid){
+      var marker = this.markerForm.value;
+
+      if(marker.draggable == 'yes'){
+        var isDraggable = true;
+      } else {
+        var isDraggable = false;
+      }
+
+      var newMarker = {
+        name : marker.name,
+        lat : marker.lat,
+        lng : marker.lng,
+        draggable : isDraggable
+      }
+
+      this.markers.push(newMarker);
+      console.log('added');
+
+    } else {
+      alert('Please fill all the fields');
+    }
   }
 }
 
