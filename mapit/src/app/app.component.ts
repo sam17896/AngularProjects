@@ -46,7 +46,8 @@ export class AppComponent {
       draggable : false
     }
 
-    this.markers.push(newMarker)
+    this.markers.push(newMarker);
+    this.service.addMarker(newMarker);
   }
 
   markerDragEnd(marker:marker , $event){
@@ -61,6 +62,8 @@ export class AppComponent {
 
     var newLat = $event.coords.lat;
     var newLng = $event.coords.lng;
+
+    this.service.updMarker(updMarker, newLat,newLng);
   }
 
   addMarker(){
@@ -87,6 +90,17 @@ export class AppComponent {
     } else {
       alert('Please fill all the fields');
     }
+  }
+  
+  removeMarker(marker){
+     for(var i=0 ;i<this.markers.length; i++){
+            if (marker.lat == this.markers[i].lat && marker.lng == this.markers[i].lng){
+                this.markers.splice(i, 1);
+            }
+        }
+
+        localStorage.markers = JSON.stringify(this.markers);
+
   }
 }
 

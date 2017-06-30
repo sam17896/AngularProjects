@@ -6,3 +6,7 @@
 agm-map {
   height: 300px;
 }
+
+.delete {
+    color: red;
+}
