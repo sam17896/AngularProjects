@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>URL</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bookmark of bookmarks">
+            <td>{{bookmark.title}}</td>
+            <td>{{bookmark.url}}</td>
+            <td>{{bookmark.category}}</td>
+            <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

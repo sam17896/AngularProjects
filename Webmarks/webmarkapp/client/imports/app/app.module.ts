@@ -4,10 +4,13 @@ import { HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 import { MyApp } from './app.component';
+import { BookmarkList } from './bookmarklist/bookmarklist';
+import {Bookmarks} from '../../collections/bookmarks';
+import {Mongo} from 'meteor/mongo';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp, BookmarkList
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule
