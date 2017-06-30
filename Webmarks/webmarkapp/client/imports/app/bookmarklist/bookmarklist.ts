@@ -13,7 +13,9 @@ export class BookmarkList {
     bookmarks : Mongo.Cursor<Object>;
     
     constructor(){
-              this.bookmarks = Bookmarks.find({});
+              var newBok = new Mongo.Collection('mybookmark');
+
+              this.bookmarks = newBok.find({});
         }
 
     
