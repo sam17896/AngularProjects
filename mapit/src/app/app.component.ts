@@ -33,6 +33,39 @@ export class AppComponent {
       draggable : false
     }
   ]
+
+  constructor(){
+
+  }
+
+  clickedMarker(marker:marker , index:number){
+    console.log('Clicked Marker' + marker.name + ' at ' + index );
+  }
+
+  mapClicked($event){
+    var newMarker = {
+      name : "Untitled",
+      lat : $event.coords.lat,
+      lng : $event.coords.lng,
+      draggable : false
+    }
+
+    this.markers.push(newMarker)
+  }
+
+  markerDragEnd(marker:marker , $event){
+    console.log("dragEnd", marker , $event);
+
+    var updMarker = {
+      name : marker.name,
+      lat: marker.lat,
+      lng :marker.lng,
+      draggable : false
+    }
+
+    var newLat = $event.coords.lat;
+    var newLng = $event.coords.lng;
+  }
 }
 
 interface marker {
