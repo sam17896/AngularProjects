@@ -1,7 +1,7 @@
+import {Mongo} from 'meteor/mongo';
+import Bookmarks from '../../../../collections/bookmarks';
 import { Component } from '@angular/core';
 import template from './bookmarklist.html';
-import {Bookmarks} from '../../../../collections/bookmarks';
-import {Mongo} from 'meteor/mongo';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class BookmarkList {
     bookmarks : Mongo.Cursor<Object>;
     
     constructor(){
-              this.bookmarks = newBok.find({});
+              this.bookmarks = Bookmarks.find().fetch();
         }
 
     
