@@ -1,19 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, FormBuilder, Validator,ReactiveFormsModule }   from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { BookmarkList } from './bookmarklist/bookmarklist';
-import {Bookmarks} from '../../collections/bookmarks';
-import {Mongo} from 'meteor/mongo';
+import { BookmarkForm } from './bookmark-form/bookmark-form';
+
 
 @NgModule({
   declarations: [
-    MyApp, BookmarkList
+    MyApp, BookmarkList, BookmarkForm
   ],
   imports: [
-    BrowserModule, HttpModule, FormsModule
+    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [MyApp]
