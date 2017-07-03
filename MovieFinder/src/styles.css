@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+img {
+    width: 100%
+}
+
+.movie_container{
+    min-height: 300px;
+    max-height: 500px;
+}
