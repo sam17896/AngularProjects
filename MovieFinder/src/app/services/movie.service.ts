@@ -65,4 +65,9 @@ export class MovieService{
             .map(res => res.json());
         
     }
+
+    getMovie(id:string){
+        return this.jsonp.get('https://api.themoviedb.org/3/movie/' + id + '?callback=JSONP_CALLBACK&api_key=1c22bbd28408d30aa548e523b4b6edd3')
+            .map(res =>res.json());
+    }
 }
