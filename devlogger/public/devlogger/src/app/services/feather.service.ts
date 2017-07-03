@@ -19,6 +19,9 @@ export class FeathersService{
         return this.htpp.post('http://localhost:3030/service', JSON.stringify(log),
         {headers: header})
         .map(res=>res.json());
+    }
 
+    deleteLog(id){
+        return this.htpp.delete('http://localhost:3030/service/' + id);
     }
 }
