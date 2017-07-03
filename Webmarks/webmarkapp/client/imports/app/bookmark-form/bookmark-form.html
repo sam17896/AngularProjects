@@ -1,5 +1,5 @@
 <h3>Add Bookmark</h3>
-<form [formGroup] ="bookmarkForm" href="#" (submit)="addBookmark($event)">
+<form [formGroup] ="bookmarkForm">
     <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" formControlName="title">
@@ -12,5 +12,5 @@
         <label>Category</label>
         <input type="text" class="form-control" formControlName="category">
     </div>
-    <button class="btn btn-primary">Submit</button>
+    <button (click)="addBookmark($event)" class="btn btn-primary">Submit</button>
 </form>

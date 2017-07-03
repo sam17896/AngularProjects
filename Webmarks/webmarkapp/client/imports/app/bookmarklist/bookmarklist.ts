@@ -10,11 +10,28 @@ import template from './bookmarklist.html';
 })
 export class BookmarkList {
 
-    bookmarks : Mongo.Cursor<Object>;
+    bookmarks : Array<Object>;
     
     constructor(){
-              this.bookmarks = Bookmarks.find().fetch();
-        }
+            console.log(Bookmarks.find().fetch());
+            this.bookmarks = Bookmarks.find().fetch();
+    }
+
+    removeBookmark(bookmark){
+        Bookmarks.remove(bookmark._id);
+    }
+
+    addBookmark(bookmark){
+      Bookmarks.insert({
+                title : bookmark.title,
+                url : bookmark.url,
+                category : bookmark.category
+            });
+    
+      //this.bookmarks = Bookmarks.find().fetch(); 
+      this.bookmarks.push(bookmark);     
+      console.log(this.bookmarks);
+    }
 
     
     

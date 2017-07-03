@@ -12,7 +12,7 @@
             <td>{{bookmark.title}}</td>
             <td>{{bookmark.url}}</td>
             <td>{{bookmark.category}}</td>
-            <td><button class="btn btn-danger">Delete</button></td>
+            <td><button (click)="removeBookmark(bookmark)" class="btn btn-danger">Delete</button></td>
         </tr>
     </tbody>
 </table>
