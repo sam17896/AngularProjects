@@ -7,14 +7,15 @@ import { Mongo } from 'meteor/mongo';
 import { MyApp } from './app.component';
 import { BookmarkList } from './bookmarklist/bookmarklist';
 import { BookmarkForm } from './bookmark-form/bookmark-form';
-
+import { BookmarkDetail } from './detail/detail';
+import {routing} from './app.router'
 
 @NgModule({
   declarations: [
-    MyApp, BookmarkList, BookmarkForm
+    MyApp, BookmarkList, BookmarkForm, BookmarkDetail
   ],
   imports: [
-    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule
+    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, routing
   ],
   providers: [BookmarkList],
   bootstrap: [MyApp]

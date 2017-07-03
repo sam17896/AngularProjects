@@ -14,6 +14,11 @@ export class BookmarkList {
     
     constructor(){
             console.log(Bookmarks.find().fetch());
+            Bookmarks.insert({
+                title : "Webmark 1",
+                url : "http://www.test.com",
+                category :"Social Network"
+            });
             this.bookmarks = Bookmarks.find().fetch();
     }
 

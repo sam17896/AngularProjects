@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let bookmark of bookmarks">
-            <td>{{bookmark.title}}</td>
+            <td><a [routerLink]="['/bookmark/bookmark._id']" {{bookmark.title}}</td>
             <td>{{bookmark.url}}</td>
             <td>{{bookmark.category}}</td>
             <td><button (click)="removeBookmark(bookmark)" class="btn btn-danger">Delete</button></td>
