@@ -60,7 +60,8 @@ export class MovieService{
     }
 
     searchMovies(searchStr : string){
-        return this.jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&query='+searchStr+'&sort_by=popularity.desc&api_key=1c22bbd28408d30aa548e523b4b6edd3')
+        console.log(searchStr);
+        return this.jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&query='+searchStr+'&sort_by=popularity.desc&api_key=1c22bbd28408d30aa548e523b4b6edd3')
             .map(res => res.json());
         
     }

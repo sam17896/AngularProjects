@@ -23,12 +23,12 @@
           <img *ngIf="!movie.poster_path" class="thumbnail" src="./Not_available.jpg">    
           <h4>{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View details &raquo;</a></p>
         </div>
       </div>
     </div>  
 </div>
-
+</div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -42,7 +42,7 @@
           <img *ngIf="!movie.poster_path" class="thumbnail" src="./Not_available.jpg">    
           <h4>{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View details &raquo;</a></p>
         </div>
       </div>
     </div>  
@@ -61,7 +61,7 @@
           <img *ngIf="!movie.poster_path" class="thumbnail" src="./Not_available.jpg">    
           <h4>{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" routerLink="/movie/{{movie.id}}">View details &raquo;</a></p>
         </div>
       </div>
     </div>  

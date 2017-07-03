@@ -25,6 +25,7 @@ export class MoviesComponent {
   searchMovies(){
     this.service.searchMovies(this.searchStr).subscribe(res => {
       this.searchRes = res.results;
+      console.log(this.searchRes);
     });
   }
 

@@ -4,14 +4,17 @@ import {FormsModule} from '@angular/forms';
 import {JsonpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { MoviesComponent} from './component/movies/movies.component';
+import { MovieComponent} from './component/movie/movie.component';
+
 import {MovieService} from './services/movie.service';
+import {routing} from './app.router';
 
 @NgModule({
   declarations: [
-    AppComponent, MoviesComponent
+    AppComponent, MoviesComponent, MovieComponent
   ],
   imports: [
-    BrowserModule,JsonpModule, FormsModule
+    BrowserModule,JsonpModule, FormsModule, routing
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
