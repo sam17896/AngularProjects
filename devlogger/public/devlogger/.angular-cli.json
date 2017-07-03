@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../bower_components/mui/packages/cdn/css/mui.css"
+        "../../bower_components/mui/packages/cdn/css/mui.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
