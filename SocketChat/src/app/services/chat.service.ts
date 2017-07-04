@@ -8,8 +8,8 @@ export class ChatService {
     private socket : any;
 
 
-    sendMessage(message : string){
-        this.socket.emit('add-message', message);
+    sendMessage(message : string, username){
+        this.socket.emit('add-message', message, username);
     }
 
     getMessages(){
@@ -24,5 +24,14 @@ export class ChatService {
         });
 
         return observable;
+    }
+
+    getUsername(){
+        return sessionStorage.getItem('username');
+    }
+
+    setUsername(username:string){
+        console.log("username set : " + username);
+        sessionStorage.setItem('username', username);
     }
 }
