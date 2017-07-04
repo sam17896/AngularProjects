@@ -6,6 +6,8 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
+import {ChatService} from './services/chat.service';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { ChatComponent } from './components/chat/chat.component';
   imports: [
     BrowserModule, HttpModule, FormsModule
   ],
-  providers: [],
+  providers: [ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
